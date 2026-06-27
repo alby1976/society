@@ -1,0 +1,6 @@
+﻿.obsidian/
+.idea/
+*.egg-info/
+__pycache__/
+dist/
+*.py[cod]

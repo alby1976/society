@@ -1,0 +1,21 @@
+[project]
+name = "python-content-generator"
+version = "0.1.0"
+description = "Jinja2 + Markdown generator for Obsidian vaults, PDF, and DOCX."
+requires-python = ">=3.10"
+dependencies = [
+  "jinja2>=3.1",
+  "python-docx>=1.1",
+  "reportlab>=4.0",
+  "pyyaml>=6.0"
+]
+
+[project.scripts]
+contentgen = "content_generator.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["content_generator*"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"

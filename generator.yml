@@ -1,0 +1,97 @@
+# Generator runtime configuration.
+#
+# This file controls build paths, output filenames, generated note locations,
+# and the frontmatter field groups used by the generator. Project metadata and
+# per-document overrides still live in source/site.yml.
+
+paths:
+  # Directory scanned recursively for Markdown documents.
+  source_dir: "source"
+
+  # Project metadata and optional page override file.
+  site_file: "source/site.yml"
+
+  # Directory containing Jinja templates.
+  template_dir: "templates"
+
+  # Directory where PDF, DOCX, and vault outputs are written.
+  dist_dir: "dist"
+
+  # Generated Obsidian vault directory. This folder is recreated on each build.
+  vault_dir: "dist/vault"
+
+  # Bare pages[].file values in source/site.yml resolve relative to this folder.
+  # Example: file: "overview.md" resolves to source/pages/overview.md.
+  legacy_pages_dir: "pages"
+
+outputs:
+  # Main vault index note path, relative to vault_dir.
+  index_note: "00 Index.md"
+
+  # Export filenames, relative to dist_dir.
+  pdf_file: "guide.pdf"
+  docx_file: "guide.docx"
+
+html:
+  # Optional static HTML website generation. When enabled, build_all writes HTML too.
+  enabled: false
+  html_dir: "dist/site"
+
+generated_notes:
+  # Generated support notes, relative to vault_dir.
+  home_dashboard: "Home Dashboard.md"
+  governance_dashboard: "Governance Dashboard.md"
+  document_registry: "Document Registry.md"
+  decision_register: "Decision Register.md"
+  dependency_map: "Dependency Map.md"
+  link_validation_report: "Link Validation Report.md"
+  release_notes: "Release Notes.md"
+  changelog: "Changelog.md"
+  review_schedule: "Review Schedule.md"
+  international_dashboard: "International Dashboard.md"
+  index_by_category: "_indexes/By Category.md"
+  index_by_status: "_indexes/By Status.md"
+  index_by_type: "_indexes/By Type.md"
+  index_by_tag: "_indexes/By Tag.md"
+  index_by_jurisdiction: "_indexes/By Jurisdiction.md"
+  index_by_chapter: "_indexes/By Chapter.md"
+  dataview_queries: "_indexes/Dataview Queries.md"
+
+frontmatter:
+  # Missing or blank required fields stop the build.
+  required:
+    - "document-id"
+    - "title"
+    - "version"
+    - "status"
+    - "type"
+    - "document-category"
+    - "effective-date"
+    - "last-reviewed"
+    - "tags"
+
+  # Recommended fields are emitted when present and omitted when blank.
+  recommended:
+    - "author"
+    - "next-review-date"
+    - "review-cycle"
+    - "approved-by"
+    - "authority-level"
+    - "related-documents"
+    - "owner"
+    - "decision-id"
+    - "dependencies"
+    - "changes"
+    - "jurisdiction"
+    - "chapter"
+    - "governance-level"
+    - "parent-document"
+    - "applies-to"
+    - "reserved-power"
+    - "local-adaptation"
+
+  # Optional fields are emitted when present and omitted when blank.
+  optional:
+    - "scriptural-foundation"
+    - "confessional-foundation"
+    - "supersedes"

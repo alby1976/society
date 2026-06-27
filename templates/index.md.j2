@@ -1,0 +1,33 @@
+{#-
+  Obsidian vault index template.
+
+  Context
+  -------
+  project : Project
+      Loaded project metadata and auto-discovered pages.
+
+  Notes
+  -----
+  This template renders only the top-level "00 Index.md" note. Generated
+  dashboards, registries, release notes, and Dataview indexes are rendered by
+  Python helper functions in content_generator.generator.
+-#}
+---
+title: {{ project.title }}
+type: index
+---
+
+# {{ project.title }}
+
+{{ project.subtitle }}
+
+{% if project.author -%}
+Prepared by {{ project.author }}
+{% endif %}
+
+## Pages
+
+{# Link to each generated page using its vault-relative output path. #}
+{% for page in project.pages -%}
+- [[{{ page.output_path.as_posix() }}|{{ page.title }}]]
+{% endfor %}

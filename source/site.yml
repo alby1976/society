@@ -1,0 +1,14 @@
+# Project-level metadata used by the index, PDF title page, and DOCX title page.
+title: "Generator Starter Kit"
+subtitle: "A reusable Python pipeline for Markdown, Obsidian, PDF, and DOCX."
+author: "Codex"
+
+# Optional page overrides can be added here when you want to control ordering or
+# override frontmatter from a specific Markdown file. Markdown files are still
+# auto-discovered recursively under source/.
+#
+# pages:
+#   - file: "pages/overview.md"
+#     document-id: "DOC-GOV-0001"
+#     title: "Governance Document Standard"
+#     slug: "01 Governance Document Standard"

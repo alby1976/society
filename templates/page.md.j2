@@ -1,0 +1,24 @@
+{#-
+  Obsidian page template.
+
+  Context
+  -------
+  project : Project
+      Parent project metadata.
+  page : Page
+      One auto-discovered Markdown source file with normalized metadata.
+
+  Notes
+  -----
+  page.frontmatter_lines is pre-rendered by Python so required, recommended,
+  and optional governance fields stay in a consistent order.
+-#}
+---
+{% for line in page.frontmatter_lines -%}
+{{ line }}
+{% endfor -%}
+---
+
+# {{ page.title }}
+
+{{ page.body }}
