@@ -1,0 +1,19 @@
+# Build Report
+
+Documents discovered: **{{ documents|length }}**
+
+## Warnings
+
+{% for warning in warnings -%}
+- {{ warning }}
+{% else %}
+- None
+{% endfor %}
+
+## Errors
+
+{% for error in errors -%}
+- {{ error }}
+{% else %}
+- None
+{% endfor %}

@@ -1,0 +1,107 @@
+packages:
+  board-review:
+    title: Board Review Package
+    confidentiality: Internal
+    include_categories:
+      - Governance
+      - Operations
+      - Finance
+      - Risk Management
+      - Human Resources
+      - Communications
+    exclude_statuses:
+      - Archived
+      - Superseded
+    output_formats:
+      - markdown
+      - html
+      - pdf
+      - docx
+    review_instructions: >
+      Review governance authority, adoption readiness, implementation risk,
+      reporting requirements, and decisions needed.
+
+  legal-review:
+    title: Legal Review Package
+    confidentiality: Restricted
+    include_categories:
+      - Governance
+      - Finance
+      - Housing
+      - Cooperative
+      - Human Resources
+      - Risk Management
+      - Legal Readiness
+      - Communications
+    include_tags:
+      - legal-readiness
+      - housing
+      - grants
+      - restricted-funds
+      - privacy
+      - safeguarding
+    output_formats:
+      - markdown
+      - pdf
+      - docx
+    review_instructions: >
+      Review legal structure, compliance, restricted funds, employment,
+      privacy, safeguarding, housing, grants, and jurisdiction-specific issues.
+
+  theological-review:
+    title: Theological Review Package
+    confidentiality: Internal
+    include_categories:
+      - Theology
+      - Ministry
+      - Governance
+    include_tags:
+      - theological-oversight
+      - church-advisory
+      - chaplaincy
+      - prayer
+      - mission
+    output_formats:
+      - markdown
+      - pdf
+      - docx
+    review_instructions: >
+      Review doctrinal consistency, church-supporting boundaries, chaplaincy,
+      prayer language, and confessional alignment.
+
+  safeguarding-review:
+    title: Safeguarding and Privacy Review Package
+    confidentiality: Restricted
+    include_categories:
+      - Risk Management
+      - Human Resources
+      - Operations
+    include_tags:
+      - safeguarding
+      - privacy
+      - vulnerable-persons
+      - incident-response
+      - confidentiality
+    output_formats:
+      - markdown
+      - pdf
+      - docx
+    review_instructions: >
+      Review protection of vulnerable persons, incident reporting, privacy,
+      confidentiality, and boundary safeguards.
+
+  public-candidate:
+    title: Public Release Candidate Package
+    confidentiality: Public Candidate
+    include_documents:
+      - Mission Statement
+      - Vision Statement
+      - Core Values
+      - Statement of Faith
+    output_formats:
+      - markdown
+      - html
+      - pdf
+    review_instructions: >
+      Do not publish until board, legal, theological, and communications approval
+      are complete.

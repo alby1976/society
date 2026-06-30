@@ -1,0 +1,46 @@
+name: Test and QA
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install -r requirements-dev.txt
+
+      - name: Run tests
+        run: pytest --cov=ccts_generator --cov-report=term-missing
+
+      - name: Build
+        run: python build.py
+
+      - name: Validate YAML
+        run: python scripts/validate_yaml.py
+
+      - name: Check links
+        run: python scripts/check_links.py
+
+      - name: Upload QA reports
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ccts-qa-reports
+          path: dist/reports/

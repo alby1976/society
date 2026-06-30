@@ -1,0 +1,7 @@
+# Generated Document Registry
+
+| Document ID | Title | Status | Type | Category | Source Path |
+|---|---|---|---|---|---|
+{% for doc in documents|sort(attribute="title") -%}
+| {{ doc.document_id }} | [[{{ doc.title }}]] | {{ doc.status }} | {{ doc.doc_type }} | {{ doc.category }} | `{{ doc.relative_path }}` |
+{% endfor %}

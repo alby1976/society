@@ -1,0 +1,27 @@
+# {{ package.title }}
+
+## Package Metadata
+
+| Field | Value |
+|---|---|
+| Package Key | {{ package.key }} |
+| Title | {{ package.title }} |
+| Confidentiality | {{ package.confidentiality }} |
+| Document Count | {{ documents|length }} |
+| Generated Date | {{ generated_date }} |
+
+## Source-of-Truth Notice
+
+This package is generated from Markdown source. Source files under `source/` remain authoritative.
+
+## Review Instructions
+
+{{ package.review_instructions }}
+
+## Documents
+
+| Document ID | Title | Status | Source |
+|---|---|---|---|
+{% for doc in documents -%}
+| {{ doc.document_id }} | [[{{ doc.title }}]] | {{ doc.status }} | `{{ doc.relative_path }}` |
+{% endfor %}

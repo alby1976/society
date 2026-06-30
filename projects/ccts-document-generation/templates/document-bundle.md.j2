@@ -1,0 +1,34 @@
+# {{ package.title }}
+
+Confidentiality: **{{ package.confidentiality }}**
+
+Generated from CCTS governance vault source.
+
+> This is a generated review package. The Markdown files in `source/` remain the source of truth.
+
+## Review Instructions
+
+{{ package.review_instructions }}
+
+## Included Documents
+
+| Document ID | Title | Status | Type | Category |
+|---|---|---|---|---|
+{% for doc in documents -%}
+| {{ doc.document_id }} | [[{{ doc.title }}]] | {{ doc.status }} | {{ doc.doc_type }} | {{ doc.category }} |
+{% endfor %}
+
+{% for doc in documents %}
+
+---
+
+# {{ doc.title }}
+
+Document ID: `{{ doc.document_id }}`  
+Status: `{{ doc.status }}`  
+Version: `{{ doc.metadata.get("version", "") }}`  
+Source: `{{ doc.relative_path }}`
+
+{{ doc.body }}
+
+{% endfor %}

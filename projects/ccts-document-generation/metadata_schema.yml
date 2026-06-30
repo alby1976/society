@@ -1,0 +1,67 @@
+required_fields:
+  - document-id
+  - title
+  - version
+  - status
+  - type
+  - document-category
+  - jurisdiction
+  - chapter
+  - governance-level
+  - last-reviewed
+  - next-review-date
+  - review-cycle
+  - authority-level
+  - tags
+
+optional_fields:
+  - effective-date
+  - approved-by
+  - scriptural-foundation
+  - confessional-foundation
+  - related-documents
+  - supersedes
+  - dependencies
+
+valid_statuses:
+  - Draft
+  - Proposed
+  - Active
+  - Archived
+  - Superseded
+
+valid_types:
+  - Policy
+  - Procedure
+  - Framework
+  - Charter
+  - Manual
+  - Bylaw
+  - Constitution
+  - Report
+  - Guideline
+  - Form
+  - Template
+  - Register
+  - Checklist
+  - Plan
+  - Standard
+  - Commentary
+  - Guide
+
+valid_categories:
+  - Governance
+  - Theology
+  - Ministry
+  - Operations
+  - Finance
+  - Housing
+  - Cooperative
+  - Human Resources
+  - Risk Management
+  - Communications
+  - Legal Readiness
+
+foundation_fields_rule:
+  scriptural-foundation: "Populate only when directly foundational to that specific document."
+  confessional-foundation: "Populate only when directly foundational to that specific document."

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{{ document.title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.55; max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
+    header { border-bottom: 1px solid #ddd; margin-bottom: 2rem; padding-bottom: 1rem; }
+    .meta { font-size: 0.9rem; color: #555; }
+    table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+    th, td { border: 1px solid #ddd; padding: 0.4rem; vertical-align: top; }
+    code { background: #f5f5f5; padding: 0.1rem 0.25rem; }
+    footer { border-top: 1px solid #ddd; margin-top: 3rem; padding-top: 1rem; color: #555; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+<header>
+  <h1>{{ document.title }}</h1>
+  <div class="meta">
+    <div>Document ID: {{ document.document_id }}</div>
+    <div>Status: {{ document.status }}</div>
+    <div>Version: {{ document.metadata.get("version", "") }}</div>
+    <div>Generated output. Source Markdown remains authoritative.</div>
+  </div>
+</header>
+
+<main>
+{{ body_html | safe }}
+</main>
+
+<footer>
+  Generated from CCTS governance vault source.
+</footer>
+</body>
+</html>

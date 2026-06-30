@@ -1,0 +1,22 @@
+.PHONY: build audit links yaml release merge clean
+
+build:
+	python build.py
+
+audit:
+	python scripts/audit_all.py
+
+links:
+	python scripts/check_links.py
+
+yaml:
+	python scripts/validate_yaml.py
+
+release:
+	python scripts/package_release.py
+
+merge:
+	python scripts/merge_packages.py packages/
+
+clean:
+	python -c "import shutil, pathlib; p=pathlib.Path('dist'); shutil.rmtree(p) if p.exists() else None"

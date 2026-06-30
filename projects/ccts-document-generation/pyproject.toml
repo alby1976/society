@@ -1,0 +1,23 @@
+[project]
+name = "ccts-governance-generator"
+version = "0.1.0"
+description = "Generator for the CCTS governance Obsidian vault and review outputs"
+requires-python = ">=3.10"
+dependencies = [
+    "PyYAML>=6.0.0",
+    "Jinja2>=3.1.0",
+]
+
+[project.optional-dependencies]
+exports = [
+    "markdown>=3.6",
+    "python-docx>=1.1.0",
+    "reportlab>=4.0.0",
+]
+
+[project.scripts]
+ccts-build = "ccts_generator.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["ccts_generator*"]

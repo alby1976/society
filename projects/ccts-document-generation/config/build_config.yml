@@ -1,0 +1,21 @@
+release_name: v0.1-governance-draft
+source_dir: source
+dist_dir: dist
+obsidian_dir: dist/obsidian-vault
+html_dir: dist/html
+docx_dir: dist/docx
+pdf_dir: dist/pdf
+reports_dir: dist/reports
+templates_dir: templates
+
+validation:
+  warn_on_populated_foundation_fields: true
+  fail_on_duplicate_document_id: true
+  fail_on_invalid_yaml: true
+  warn_on_missing_links: true
+
+exports:
+  html: true
+  docx: true
+  pdf: true
+  review_packages: true
